@@ -3,12 +3,48 @@
   text-align: center;
 }
 
+/* Container for both schedules */
 .schedules {
   display: flex;
   justify-content: flex-start;
 }
 
+/* Flex the two calendars in a side-by-side view */
 .cal {
   width: 50%;
   margin: 30px;
+}
+
+/* Do not allow users to edit group availability */
+#group {
+  pointer-events: none;
+}
+
+/* Hard-code imaginary group's availability by marking some time blocks as blue */
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(9) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(15) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(21) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(27) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(58) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(64) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(70) > :nth-child(1),
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(76) > :nth-child(1) {
+  background-color: rgb(178, 197, 224);
+}
+
+/* If a time is selected but it is not a time when other group members are available, turn the slot dark grey */
+#group .ScheduleSelector__Wrapper-sc-1ke4ka2-0 .ScheduleSelector__Grid-sc-1ke4ka2-1 .ScheduleSelector__GridCell-sc-1ke4ka2-2 .ScheduleSelector__DateCell-sc-1ke4ka2-3.lgjFTk {
+  background-color: rgb(178, 197, 224);
+}
+
+/* If one of the time slots where another group member is available is picked, turn the slot dark blue */
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(9) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(15) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(21) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(27) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(58) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(64) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(70) > :nth-child(1).lgjFTk,
+#group .ScheduleSelector__Grid-sc-1ke4ka2-1 > :nth-child(76) > :nth-child(1).lgjFTk {
+    background-color: rgba(89,154,242,1) !important;
 }
