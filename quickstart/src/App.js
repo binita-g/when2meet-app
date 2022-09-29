@@ -12,15 +12,29 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello CodeSandbox</h1>
-        <ScheduleSelector
-          selection={this.state.schedule}
-          numDays={5}
-          minTime={8}
-          maxTime={22}
-          hourlyChunks={2}
-          onChange={this.handleChange}
-        />
+        <h1>When2Meet</h1>
+        <div class="schedules">
+          <div class="cal">
+            <ScheduleSelector
+              selection={this.state.schedule}
+              numDays={5}
+              minTime={8}
+              maxTime={22}
+              hourlyChunks={1}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div class="cal">
+            <ScheduleSelector
+              selection={this.state.schedule}
+              numDays={5}
+              minTime={8}
+              maxTime={22}
+              hourlyChunks={1}
+              onChange={this.handleChange}
+            />
+          </div>
+        </div>
       </div>
     );
   }

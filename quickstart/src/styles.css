@@ -2,3 +2,13 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.schedules {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cal {
+  width: 50%;
+  margin: 30px;
+}
